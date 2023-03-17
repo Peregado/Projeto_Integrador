@@ -3,10 +3,13 @@
 
 
 
+
 Lista de Funcionalidades
 
-Cadastro 
+Cadastro
+
 - Realizar cadastro no site para visualizar os veículos. 
+
 
 Escolha Modelo
 -Escolha o modelo que seja de acordo com o seu gosto;
@@ -37,7 +40,7 @@ Aluguel
 
 
 
-
+---
 
 Turma D 3° semestre
 
