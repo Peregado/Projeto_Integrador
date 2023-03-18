@@ -1,6 +1,6 @@
-# Projeto Integrador - III
+# Sejam Bem vindos ao SENACARS 🚘
 
-Sejam Bem vindos ao SENACARS 🚘
+
 
 
 
@@ -32,36 +32,20 @@ Aluguel
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
 ### Turma D - 3° semestre
 
 #### Integrantes: 
 
-> phvicent - Pedro Henrique Vicente
+> phvicent - Pedro Henrique Vicente 🦖
 
-> Bimacedo - Ana Beatriz da Silva Macedo
+> Bimacedo - Ana Beatriz da Silva Macedo 🐙
 
-> Lucas00Souza - Lucas de Souza
+> Lucas00Souza - Lucas de Souza 🐧
 
-> Lukntc84 - Luccas Santana
+> Lukntc84 - Luccas Santana 🐼
 
-> Peregado - Pedro Henrique Regado
+> Peregado - Pedro Henrique Regado 🐶
 
-> the1scient - Guilherme Fabbri 
+> the1scient - Guilherme Fabbri 🐯
