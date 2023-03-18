@@ -1,4 +1,4 @@
-# Projeto_IntegradorIII
+# Projeto_Integrador - III
 
 
 
@@ -50,17 +50,18 @@ Aluguel
 
 ---
 
-Turma D 3° semestre
+### Turma D - 3° semestre
 
-Integrantes
-phvicent - Pedro Henrique Vicente
+#### Integrantes: 
 
-Bimacedo - Ana Beatriz da Silva Macedo
+> phvicent - Pedro Henrique Vicente
 
-Lucas00Souza - Lucas de Souza
+> Bimacedo - Ana Beatriz da Silva Macedo
 
-Lukntc84 - Luccas Santana
+> Lucas00Souza - Lucas de Souza
 
-Peregado - Pedro Henrique Regado
+> Lukntc84 - Luccas Santana
 
-the1scient - Guilherme Fabbri 
+> Peregado - Pedro Henrique Regado
+
+> the1scient - Guilherme Fabbri 
