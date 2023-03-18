@@ -8,18 +8,24 @@
 Lista de Funcionalidades
 </h2>
 
+<h4>
 Cadastro
-
+</h4>
 - Realizar cadastro no site para visualizar os veículos. 
 
-
+<h4>
 Escolha Modelo
+</h4>
 -Escolha o modelo que seja de acordo com o seu gosto;
 
+<h4>
 Aprovação
+</h4>
 - Aprovação de crédito para liberar veículo;
 
-Aluguel 
+<h4>
+Aluguel
+</h4>
 - Prazo de uso do veículo e retirada do veículo.
  
  
