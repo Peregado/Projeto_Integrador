@@ -1,30 +1,27 @@
 # Sejam Bem vindos ao SENACARS 🚘
 
-
-
-
-
+<h1></h1>
 <h2>
-Lista de Funcionalidades
+Em nosso site você pode 
 </h2>
 
 <h4>
-Cadastro
+Se Cadastrar
 </h4>
 - Realizar cadastro no site para visualizar os veículos. 
 
 <h4>
-Escolha Modelo
+Escolher o modelo
 </h4>
--Escolha o modelo que seja de acordo com o seu gosto;
+-Escolha o modelo que seja de acordo com o seu gosto.
 
 <h4>
-Aprovação
+Ter Aprovação
 </h4>
-- Aprovação de crédito para liberar veículo;
+- Aprovação de crédito para liberar veículo.
 
 <h4>
-Aluguel
+E por fim, alugar nossos carros
 </h4>
 - Prazo de uso do veículo e retirada do veículo.
  
