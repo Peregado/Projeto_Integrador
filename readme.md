@@ -1,4 +1,4 @@
-# Sejam Bem vindos ao SENACARS 🚘
+# Seja Bem-vindo ao SENACARS 🚘
 
 <h1></h1>
 <h2>
