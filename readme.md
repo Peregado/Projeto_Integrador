@@ -54,3 +54,5 @@ Lucas00Souza - Lucas de Souza
 Lukntc84 - Luccas Santana
 
 Peregado - Pedro Henrique Regado
+
+the1scient - Guilherme Fabbri 
