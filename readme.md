@@ -1,5 +1,6 @@
 # Seja Bem-vindo ao SENACARS 🚘
 
+
 <div>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112720353/226183950-3b7a0032-5ae7-4946-ad9c-2bb747ae573c.gif" "width 700px"/>
@@ -40,11 +41,15 @@ E por fim, alugar nossos carros 🚗
 <img src="https://user-images.githubusercontent.com/112720353/226142022-7f7c254f-edf1-484f-b88f-dfcd07e86fbb.png" "width 700px"/>
 <img src="https://user-images.githubusercontent.com/112720353/226134099-e782b9dc-aa66-4f2f-8ff7-48aa13f45f23.png" "width 700px"/>
 </div>
+
+
 ---
-<h2> MER </h2>
+
+<h1> MER </h1>
 <p align="center">
 <img src="https://user-images.githubusercontent.com/112720353/226187638-f9e50ea1-9cb6-4d7e-abcc-67b6dc917553.png" "width 650px"/>
 </p>
+
 ---
 
 ### Turma D - 3° semestre
