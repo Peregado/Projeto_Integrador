@@ -1,27 +1,31 @@
 # Seja Bem-vindo ao SENACARS 🚘
 
-<h1></h1>
+<div>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/112720353/226183950-3b7a0032-5ae7-4946-ad9c-2bb747ae573c.gif" "width 700px"/>
+</p>
+</div>
 <h2>
 Em nosso site você pode 
 </h2>
 
 <h4>
-Se Cadastrar
+Se Cadastrar📲
 </h4>
 - Realizar cadastro no site para visualizar os veículos. 
 
 <h4>
-Escolher o modelo
+Escolher o modelo🤔
 </h4>
 -Escolha o modelo que seja de acordo com o seu gosto.
 
 <h4>
-Ter Aprovação
+Ter Aprovação 💵
 </h4>
 - Aprovação de crédito para liberar veículo.
 
 <h4>
-E por fim, alugar nossos carros
+E por fim, alugar nossos carros 🚗
 </h4>
 - Prazo de uso do veículo e retirada do veículo.
  
@@ -43,14 +47,14 @@ E por fim, alugar nossos carros
 
 #### Integrantes: 
 
-> phvicent - Pedro Henrique Vicente 🦖
+> phvicent - Pedro Henrique Vicente 👹
 
 > Bimacedo - Ana Beatriz da Silva Macedo 🐙
 
-> Lucas00Souza - Lucas de Souza 🐧
+> Lucas00Souza - Lucas de Souza 🕹
 
-> Lukntc84 - Luccas Santana 🐼
+> Lukntc84 - Luccas Santana 👻
 
-> Peregado - Pedro Henrique Regado 🐶
+> Peregado - Pedro Henrique Regado 🤖
 
-> the1scient - Guilherme Fabbri 🐯
+> the1scient - Guilherme Fabbri 👾
