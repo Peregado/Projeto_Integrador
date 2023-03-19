@@ -42,7 +42,9 @@ E por fim, alugar nossos carros 🚗
 </div>
 ---
 <h2> MER </h2>
-
+<p align="center">
+<img src="https://user-images.githubusercontent.com/112720353/226187638-f9e50ea1-9cb6-4d7e-abcc-67b6dc917553.png" "width 650px"/>
+</p>
 ---
 
 ### Turma D - 3° semestre
