@@ -1,0 +1,3 @@
+br\com\Senacars\servelet\Senacars.class
+br\com\Senacars\dao\CarDao.class
+br\com\Senacars\model\Car.class
