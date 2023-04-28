@@ -1,10 +1,15 @@
 <?php
-    $dbHost = 'Localhost';
-    $dbUsername = 'root';
-    $dbPassword = 'minas1978';
-    $dbName = 'locadora';
-    
-    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword,  $dbName);
+
+    define('HOST', 'localhost');
+    define('USER', 'root');
+    define('PASSWORD', 'p@$$w0rd');
+    define('DB', 'locadora');
+
+    $pdo = new PDO('mysql:host='.HOST.';dbname='.DB, USER, PASSWORD) or die('Não foi possível conectar-se ao banco de dados');
+
+    define('SITE_NAME', 'SENACARS');
+    define('SITE_FAVICON', '');
+    define('SITE_VERSION', '');
 
     
 ?>
