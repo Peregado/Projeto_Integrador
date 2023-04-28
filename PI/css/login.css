@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+div {
+    display: flex;
+    align-items: center;
+  }
+.painel2{
+    
+    margin-top: 120px;
+    width: 500px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    shape-outside: inset(100px 100px 100px 100px);
+    background: #0B5EC9;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.login{
+    color: #ffffff;
+    font-size: 18px;
+    top: 220px;
+    position: absolute;
+    left: 47%;
+  
+}
+.search-boxlogin{
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform:  translate(-50%, -50%);
+    background: #0B5EC9;
+    height: 0px;
+    width: 420px;
+    padding: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ffffff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+   
+}
+.search-senha{
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform:  translate(-50%, -50%);
+    background: #0B5EC9;
+    height: 0px;
+    width: 420px;
+    padding: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ffffff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    outline: 0;
+}
+input::placeholder {
+    color: #4090f8;
+    
+  }
+  
+.email{
+    color: #ffffff;
+    top: 350px;
+    position: absolute;
+    margin-left: -348px;
+}
+.senha{
+    color: #ffffff;
+    top: 460px;
+    position: absolute;
+    margin-left: -348px;
+}
+.registrese{
+    color: #ffffff;
+    font-size: 18px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    text-decoration: underline;
+}
+.search-email{
+    background: none;
+    border: 0;
+    outline: 0;
+    
+}
+.botaocontinuar{
+    padding: 10px 40px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #0B5EC9;
+    border: none;
+    top: 260px;
+    position: absolute;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 115px;
+    font-size: 23px;
+}
