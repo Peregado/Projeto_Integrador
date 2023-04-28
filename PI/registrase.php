@@ -1,33 +1,11 @@
-<?php
-    session_start();
-    
-    if(isset($_POST['submit']))
-    {
-        include_once('config.php');
 
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $data = $_POST['data_nascimento'];
-        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-        $query = "INSERT INTO usurarios(nome,email,senha,data_nasc) 
-        VALUES ('$nome','$email','$senhaHash','$data')";
-        
-        $result = mysqli_query($conexao, $query);
-        
-        $_SESSION['nome'] = $nome;
-        
-        header("Location: index.php");
-        exit();
-    }
-?>
 <!DOCTYPE html>
 <html lang = "pt-br">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Senacar</title>
+  <title><?php echo SITE_NAME ?></title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link href=".\css\style.css" rel="stylesheet" type="text/css" />
   <link href=".\css\normalize-min.css" rel=" stylesheet" type="text/css"/>
@@ -66,7 +44,7 @@
         </div>
       </nav>
     <div class="painel2">
-      <form action="registrase.php" method="POST">
+      <form action="controllers/registro.php" method="POST">
         <fieldset>
             <legend class="cadastro"><h1>Cadastro</h1></legend>
             <br>
