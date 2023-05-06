@@ -1,23 +1,24 @@
 <?php
-    session_start();
+    require_once('../global.php');
     
-    if(isset($_POST['submit']))
-    {
-        include_once('config.php');
+ 
 
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $data = $_POST['data_nascimento'];
-        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-        $query = "INSERT INTO usurarios(nome,email,senha,data_nasc) 
-        VALUES ('$nome','$email','$senhaHash','$data')";
+        $nome = htmlspecialchars($_POST['nome']);
+        $email = htmlspecialchars($_POST['email']);
+        $senha = htmlspecialchars($_POST['senha']);
+        $data = htmlspecialchars($_POST['data_nascimento']);
+        $senha = md5($senha);
+
+        $sql = $pdo->prepare("INSERT INTO usuarios (nome, email, senha, data_nasc) VALUES (:nome, :email, :senha, :data_nascimento)");
+        $sql->bindValue(":nome", $nome);
+        $sql->bindValue(":email", $email);
+        $sql->bindValue(":senha", $senha);
+        $sql->bindValue(":data_nascimento", $data);
+        $sql->execute();
+
+
         
-        $result = mysqli_query($conexao, $query);
-        
-        $_SESSION['nome'] = $nome;
-        
-        header("Location: index.php");
-        exit();
-    }
+        header("Location: ../index.php");
+
+
 ?>

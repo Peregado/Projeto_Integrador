@@ -1,3 +1,11 @@
+<?php 
+
+require_once('global.php');
+
+$user->verificarLogin();
+
+?>
+
 <!DOCTYPE html>
 <html lang = "pt-br">
 
@@ -8,21 +16,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link href=".\css\style.css" rel="stylesheet" type="text/css" />
   <link href=".\css\normalize-min.css" rel=" stylesheet" type="text/css"/>
+  <!-- font awesome --> 
+  <script src="https://kit.fontawesome.com/6e9c638913.js" crossorigin="anonymous"></script>
 <body>
-  <?php
-            session_start(); // Start the session
 
-            // Check if the user is logged in
-            if(!isset($_SESSION['nome']))
-            {
-                // Redirect to the login page
-                header("Location: login.php");
-                exit();
-            }
-
-            $nomeArray = explode(" ", $_SESSION['nome']);
-            $primeiroNome = $nomeArray[0];
-        ?>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <div class="container-fluid">
           <a class="logo" href="index.html"> <img src =".\img\logo.png"></a>
@@ -45,7 +42,9 @@
                 <a class="nav-link" href="#">Central</a>
               </li>
               <li class = "nav-item">
-                <a class="nav-link active"><?php echo $primeiroNome; ?> </a>
+                <!-- icon person --> 
+               
+                <a class="nav-link active"><i class="fas fa-user"></i> <?php echo $_SESSION['user']['nome']; ?> </a>
               </li>
 
             </ul>
@@ -59,10 +58,8 @@
             <div class="carro"><img src = ".\img\hero.png"></div>             
             <div class="search-box">
                 <input type="texto" class="search-text" placeholder="Ex: São Paulo">
-                <input type="date" class="search-text-data" placeholder="Data">
-                <input type="time" class="search-text-hora" placeholder="hora">
-                <input type="date" class="search-text-data2" placeholder="Data">
-                <input type="time" class="search-text-hora2" placeholder="hora">
+                <input type="datetime-local" class="search-text-data" placeholder="Data">
+                <input type="datetime-local" class="search-text-data2" placeholder="Data">
                 <div class = "data"><h4>Data de Retirada</h4></div>
                 <div class = "data2"><h4>Data de Entrega</h4></div>
               

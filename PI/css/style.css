@@ -126,13 +126,13 @@ img{
 .search-text-data{
     position: absolute;
     top: 135px;
-    left: 90px;
+    left: 28%;
     border: 0;
     outline: 0;
     transform:  translate(-50%, -50%);
     background: #ffffff;
     height: 50px;
-    width: 40%;
+    width: 55%;
     padding: 10px;
     border-radius: 40px;
     align-items: center;
@@ -143,13 +143,13 @@ img{
 .search-text-data2{
     position: absolute;
     top: 250px;
-    left: 90px;
+    left: 28%;
     border: 0;
     outline: 0;
     transform:  translate(-50%, -50%);
     background: #ffffff;
     height: 50px;
-    width: 40%;
+    width: 55%;
     padding: 10px;
     border-radius: 40px;
     align-items: center;
