@@ -78,7 +78,7 @@ include_once('config/header.php');
           <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->
       
-            <a href="#!" class="text-center">Forgot password?</a>
+            <a href="#!" class="text-center">Esqueceu sua senha?</a>
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
