@@ -8,10 +8,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-md-0" style="font-family: 'Montserrat';">
          
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Início</a>
+                <a class="nav-link" href="<?php echo SITE_URL ?>index.php">Início</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href ="#">Catálogo</a>
+                <a class="nav-link" href ="<?php echo SITE_URL ?>catalogo.php">Catálogo</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Planos</a>
