@@ -45,7 +45,7 @@ $destaqueCarros = $carros->getCarrosDestaque();
                 <strong>Cor</strong>: <?php echo $carro['cor']; ?> |
                 <strong>Valor</strong>: R$<?php echo $carro['valor']; ?>/d
               </p>
-              <p class="card-text">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <p class="card-text">Este carro está atualmente em promoção no <?php echo SITE_NAME ?>.</p>
             </div>
           </div>
         </div>
