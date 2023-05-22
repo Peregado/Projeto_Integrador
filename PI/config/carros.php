@@ -20,6 +20,21 @@ class Carros {
 
     }
 
+    public function getAllCarros() {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM carros");
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            return $sql->fetchAll();
+        } else {
+            return array();
+        }
+
+    }
+
 
     public function getCarroTipo($id) {
 

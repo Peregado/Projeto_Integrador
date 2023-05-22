@@ -2,6 +2,7 @@
 require_once('global.php');
 $user->verificarLogin();
 $destaqueCarros = $carros->getCarrosDestaque();
+$getCarros = $carros->getAllCarros();
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +37,7 @@ $destaqueCarros = $carros->getCarrosDestaque();
 
       <?php foreach ($destaqueCarros as $carro) : ?>
         <div class="col-md-4">
-          <div class="card">
+          <div class="card shadow-lg">
             <img src="<?php echo $carro['imagem']; ?>" class="card-img-top destaques" alt="<?php echo $carro['modelo']; ?>">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title"><?php echo $carro['modelo']; ?></h5>
@@ -53,11 +54,29 @@ $destaqueCarros = $carros->getCarrosDestaque();
 
     </div>
 
-
-
     <hr><hr>
+      <div class="row">
+      <h4 class="text-center">Nossa Frota</h4>
 
-    <h4 class="text-center">Nossa Frota</h4>
+      <?php foreach ($getCarros as $carro) : ?>
+        <div class="col-md-4 mt-3">
+          <div class="card shadow">
+            <img src="<?php echo $carro['imagem']; ?>" class="card-img-top destaques" alt="<?php echo $carro['modelo']; ?>">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"><?php echo $carro['modelo']; ?></h5>
+              <p class="card-text" style="font-size: 15px;">
+                <strong>Tipo</strong>: <?php echo $carroTipo = $carros->getCarroTipo($carro['tipo'])['nome']; ?> |
+                <strong>Cor</strong>: <?php echo $carro['cor']; ?> |
+                <strong>Valor</strong>: R$<?php echo $carro['valor']; ?>/d
+              </p>
+              <p class="card-text">Este carro está atualmente em promoção no <?php echo SITE_NAME ?>.</p>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
+
+      </div>
+
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
