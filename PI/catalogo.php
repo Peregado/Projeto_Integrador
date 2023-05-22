@@ -21,8 +21,17 @@ $getCarros = $carros->getAllCarros();
     .card {
       height: 100%;
     }
-    .destaques img {
-        height: 200px;
+    .card-img-top img {
+      height: 200px;
+    }
+
+    img.card-img-top {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    img.card-img-top:hover {
+      overflow: hidden;
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -38,7 +47,7 @@ $getCarros = $carros->getAllCarros();
       <?php foreach ($destaqueCarros as $carro) : ?>
         <div class="col-md-4">
           <div class="card shadow-lg">
-            <img src="<?php echo $carro['imagem']; ?>" class="card-img-top destaques" alt="<?php echo $carro['modelo']; ?>">
+            <img src="<?php echo $carro['imagem']; ?>" class="card-img-top" alt="<?php echo $carro['modelo']; ?>">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title"><?php echo $carro['modelo']; ?></h5>
               <p class="card-text" style="font-size: 15px;">
@@ -53,15 +62,15 @@ $getCarros = $carros->getAllCarros();
       <?php endforeach; ?>
 
     </div>
-
-    <hr><hr>
+    <br>
+    <hr>
       <div class="row">
       <h4 class="text-center">Nossa Frota</h4>
 
       <?php foreach ($getCarros as $carro) : ?>
         <div class="col-md-4 mt-3">
           <div class="card shadow">
-            <img src="<?php echo $carro['imagem']; ?>" class="card-img-top destaques" alt="<?php echo $carro['modelo']; ?>">
+            <img src="<?php echo $carro['imagem']; ?>" class="card-img-top" alt="<?php echo $carro['modelo']; ?>">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title"><?php echo $carro['modelo']; ?></h5>
               <p class="card-text" style="font-size: 15px;">
@@ -77,7 +86,11 @@ $getCarros = $carros->getAllCarros();
 
       </div>
 
+      <hr>
+
+      <!-- footer --> 
   </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
