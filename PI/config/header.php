@@ -16,9 +16,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Planos</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Central</a>
-              </li>
+             
               <?php if(@!isset($_SESSION['user'])): ?>
               <li class="nav-item" >
                 <a class="nav-link active" aria-current="page" href="#">Entrar / Cadastrar</a>
@@ -35,6 +33,11 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item text-black" href="#">Meus dados</a></li>
                   <li><a class="dropdown-item text-black" href="<?php echo SITE_URL ?>logout.php">Sair</a></li>
+                  <?php if($user->getUserRank($_SESSION['user']['id'])['rank'] > 1): ?>
+
+                  <li><a class="dropdown-item text-black" href="<?php echo SITE_URL ?>admin/index.php">Painel de Controle</a></li>
+                  <?php endif; ?>
+
                 </ul>
               </li>
 
