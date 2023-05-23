@@ -8,7 +8,7 @@ class Carros {
     public function getCarrosDestaque() {
         global $pdo;
 
-        $sql = $pdo->prepare("SELECT * FROM carros WHERE em_destaque = 1");
+        $sql = $pdo->prepare("SELECT * FROM carros WHERE em_destaque = 1 AND disponivel = 1");
         $sql->execute();
 
         if($sql->rowCount() > 0) {

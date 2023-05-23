@@ -78,7 +78,7 @@ $getCarros = $carros->getAllCarros();
                 <strong>Cor</strong>: <?php echo $carro['cor']; ?> |
                 <strong>Valor</strong>: R$<?php echo $carro['valor']; ?>/d
               </p>
-              <p class="card-text">Este carro está atualmente em promoção no <?php echo SITE_NAME ?>.</p>
+              <p class="card-text">Este carro está <?php echo $carro['disponivel'] ? "<span class='text-success'>DISPONÍVEL</span>" : "<span class='text-danger'>NÃO DISPONÍVEL</span>"; ?> no <?php echo SITE_NAME ?>.</p>
             </div>
           </div>
         </div>
