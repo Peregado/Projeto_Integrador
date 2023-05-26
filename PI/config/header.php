@@ -11,10 +11,10 @@
                 <a class="nav-link" href="<?php echo SITE_URL ?>index.php">Início</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href ="<?php echo SITE_URL ?>catalogo.php">Catálogo</a>
+                <a class="nav-link" href ="<?php echo SITE_URL ?>catalogo.php">Nossa Frota</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Planos</a>
+                <a class="nav-link" href="<?php echo SITE_URL?>planos.php">Planos</a>
               </li>
              
               <?php if(@!isset($_SESSION['user'])): ?>
