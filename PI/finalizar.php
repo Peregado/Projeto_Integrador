@@ -46,7 +46,7 @@ $dias = $interval->format('%a');
                 </div>
                 <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title text-center"><?php echo $carroInfo['modelo']; ?></h5>
+                    <h5 class="card-title text-center"><?php echo $carroInfo['modelo']; ?> | <code style="color: #07aadb;"><?php echo $carroInfo['placa']; ?></code></h5>
                     <!-- form with disabled items showing user info -->
                     <form action="finalizar.php" method="post">
                         <div class="mb-3">
@@ -55,11 +55,11 @@ $dias = $interval->format('%a');
                         </div>
                         <div class="mb-3">
                             <label for="dt_locacao" class="form-label">Data de Locação</label>
-                            <input type="text" class="form-control" id="dt_locacao" name="dt_locacao" value="<?php echo $dtLocacao->format('d/m/Y'); ?>" disabled>
+                            <input type="datetime-local" class="form-control" id="dt_locacao" name="dt_locacao" value="<?php echo $_SESSION['locacao']['informacoes']['dt_locacao']; ?>" onchange="mudarPreco()">
                         </div>
                         <div class="mb-3">
                             <label for="dt_final" class="form-label">Data de Devolução</label>
-                            <input type="text" class="form-control" id="dt_final" name="dt_final" value="<?php echo $dtDevolucao->format('d/m/Y'); ?>" disabled>
+                            <input type="datetime-local" class="form-control" id="dt_final" name="dt_final" value="<?php echo $_SESSION['locacao']['informacoes']['dt_final']; ?>" onchange="mudarPreco()">
                         </div>
                         <div class="mb-3">
                             <label for="valor" class="form-label">Valor/dia</label>
@@ -67,11 +67,11 @@ $dias = $interval->format('%a');
                         </div>
                         <div class="mb-3">
                             <label for="valor" class="form-label">Valor Total</label>
-                            <input type="text" class="form-control" id="valor" name="valor" value="R$<?php echo $carroInfo['valor'] * $dias ?>" disabled>
+                            <input type="text" class="form-control" id="valorFinal" name="valor" value="R$<?php echo $carroInfo['valor'] * $dias ?>" disabled>
                         </div>
                     </form>
-                    <small class="text-muted">Ao alugar você concorda com os Termos e Condições do <?php echo SITE_NAME ?></small></p>
-                    <a href="finalizar.php?carro_id=<?php echo $carro_id; ?>" class="btn btn-primary col-md-12">Confirmar Locação</a>
+                    <small class="text-muted">Ao alugar você concorda com os Termos e Condições do <?php echo SITE_NAME ?></small>.</p>
+                    <a href="action.php?type=finalizar<?php echo $carro_id; ?>" class="btn btn-primary col-md-12">Confirmar Locação</a>
                 </div>
                 </div>
             </div>
@@ -87,6 +87,22 @@ $dias = $interval->format('%a');
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script>
+
+function mudarPreco()   {   
+    var dtLocacao = new Date(document.getElementById("dt_locacao").value);
+    var dtDevolucao = new Date(document.getElementById("dt_final").value);
+    var diferenca = dtDevolucao.getTime() - dtLocacao.getTime();
+    var dias = Math.ceil(diferenca / (1000 * 3600 * 24));
+    var valor = <?php echo $carroInfo['valor']; ?>;
+    var valorTotal = dias * valor;
+    document.getElementById("valorFinal").value = "R$" + valorTotal;
+}
+
+    </script>
+
 </body>
+
+
 
 </html>
