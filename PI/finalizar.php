@@ -2,8 +2,13 @@
 require_once('./global.php');
 
 $carro_id = $_GET['carro_id'];
+$_SESSION['locacao']['carro_id'] = $carro_id;
 
 $carroInfo = $carros->getCarroById($carro_id);
+if(empty($carroInfo)) {
+    header("Location: ../index.php");
+    exit;
+}
 
 $dtLocacao = new DateTime($_SESSION['locacao']['informacoes']['dt_locacao']);
 $dtDevolucao = new DateTime($_SESSION['locacao']['informacoes']['dt_final']);
@@ -48,7 +53,7 @@ $dias = $interval->format('%a');
                 <div class="card-body">
                     <h5 class="card-title text-center"><?php echo $carroInfo['modelo']; ?> | <code style="color: #07aadb;"><?php echo $carroInfo['placa']; ?></code></h5>
                     <!-- form with disabled items showing user info -->
-                    <form action="finalizar.php" method="post">
+                    <form action="<?php echo SITE_URL ?>action.php" method="post">
                         <div class="mb-3">
                             <label for="cidade" class="form-label">Cidade/Localização</label>
                             <input type="text" class="form-control" id="cidade" name="cidade" value="<?php echo $_SESSION['locacao']['informacoes']['cidade']; ?>" disabled>
@@ -66,12 +71,12 @@ $dias = $interval->format('%a');
                             <input type="text" class="form-control" id="valor" name="valor" value="R$<?php echo $carroInfo['valor']; ?>" disabled>
                         </div>
                         <div class="mb-3">
-                            <label for="valor" class="form-label">Valor Total</label>
+                            <label for="valor" class="form-label">Valor Total (por <?php echo $dias; ?> dias)</label>
                             <input type="text" class="form-control" id="valorFinal" name="valor" value="R$<?php echo $carroInfo['valor'] * $dias ?>" disabled>
                         </div>
-                    </form>
                     <small class="text-muted">Ao alugar você concorda com os Termos e Condições do <?php echo SITE_NAME ?></small>.</p>
-                    <a href="action.php?type=finalizar<?php echo $carro_id; ?>" class="btn btn-primary col-md-12">Confirmar Locação</a>
+                    <input type="submit" class="btn btn-primary col-md-12" value="Confirmar Locação">
+                    </form>
                 </div>
                 </div>
             </div>
