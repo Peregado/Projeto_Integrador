@@ -19,12 +19,12 @@
                   Gerenciar Frota
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="<?php echo SITE_URL ?>admin/locacoes.php">
                   <span data-feather="map"></span>
                   Gerenciar Locadoras
                 </a>
-              </li>
+              </li> -->
 
              
             </ul>

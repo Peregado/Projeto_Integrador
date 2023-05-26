@@ -29,7 +29,6 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/home.css">
 
   
   </head>
@@ -77,7 +76,7 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
                 <td><?php echo $carro['modelo'] ?></td>
                 <td><?php echo $carro['placa'] ?></td>
                 <td><img src="<?php echo $carro['imagem'] ?>" width="100px"></td>
-                <td><?php echo $carro['disponivel'] ? "Sim" : "Não" ?></td>
+                <td><?php echo $carro['disponivel'] ? "<span class='text-success'>Sim</span>" : "<span class='text-danger'>Não</span>" ?></td>
                 <td>
                   <a href="edit.php?type=edit_carro&id=<?php echo $carro['id'] ?>" class="btn btn-warning">Editar</a>
                   <a href="action.php?type=delete_carro&id=<?php echo $carro['id'] ?>" class="btn btn-danger">Excluir</a>

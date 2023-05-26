@@ -29,7 +29,6 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/home.css">
 
   
   </head>
@@ -59,7 +58,49 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
 
 
           <table class="table table-bordered" id="table-agenda">
-            
+            <!-- tabela com id, id_usuario, carro, dt_locacao, dt_final join carros.imagem -->
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">ID Usuário</th>
+                <th scope="col">Carro</th>
+                <th scope="col">Imagem</th>
+                <th scope="col">Data Locação</th>
+                <th scope="col">Data Final</th>
+                <th scope="col">Ações</th>
+              </tr>
+              
+            </thead>
+            <tbody>
+              <?php 
+                $sql = $pdo->prepare("SELECT * FROM locacoes");
+                $sql->execute();
+                $locacoes = $sql->fetchAll();
+                foreach($locacoes as $locacao) {
+                  $sql = $pdo->prepare("SELECT * FROM carros WHERE id = :id");
+                  $sql->bindValue(":id", $locacao['id_carro']);
+                  $sql->execute();
+                  $carro = $sql->fetch();
+                  $sql = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
+                  $sql->bindValue(":id", $locacao['id_usuario']);
+                  $sql->execute();
+                  $usuario = $sql->fetch();
+              ?>
+              <tr>
+                <th scope="row"><?php echo $locacao['id'] ?></th>
+                <td><?php echo $usuario['nome'] ?></td>
+                <td><?php echo $carro['modelo'] ?></td>
+                <td><img src="<?php echo $carro['imagem'] ?>" width="100px"></td>
+                <td><?php echo date('d/m/Y H:i', strtotime($locacao['dt_locacao'])); ?></td>
+                <td><?php echo date('d/m/Y H:i', strtotime($locacao['dt_final'])); ?></td>
+                <td>
+                  <a href="edit.php?type=edit_locacao&id=<?php echo $locacao['id'] ?>" class="btn btn-primary">Editar</a>
+                  <a href="action.php?type=delete_locacao&id=<?php echo $locacao['id'] ?>" class="btn btn-danger">Excluir</a>
+                </td>
+              </tr>
+              <?php } ?>
+            </tbody>
+
           </table>
 
         </main>

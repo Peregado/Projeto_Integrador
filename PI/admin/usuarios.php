@@ -29,7 +29,6 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/home.css">
 
   
   </head>

@@ -29,9 +29,19 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/home.css">
 
-  
+    <style>
+    .card {
+      color: white;
+    background: linear-gradient(45deg, #707022 3%, #976a17 5%, #1111cf 70%);
+    border: 0px;
+    }
+    .card:hover {
+      color: white;
+    background: linear-gradient(45deg, #5e5ee1 50%, #dbba7e 20%, #707022 70%);
+    border: 0px;
+    }
+  </style>
   </head>
 
   <body>
@@ -50,19 +60,60 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
         <?php include_once('includes/sidebar.php'); ?>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Painel de Controle - <?php echo SITE_NAME ?></h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-            
-            </div>
-          </div>
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Painel de Controle - <?php echo SITE_NAME ?></h1>
+    <div class="btn-toolbar mb-2 mb-md-0"></div>
+  </div>
 
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Locações</h5>
+          <h6 class="card-subtitle mb-2 font-italic">Total de locações</h6>
+          <p class="card-text">
+<?php 
+  $locacoes = $pdo->query("SELECT * FROM locacoes");
+  echo $locacoes->rowCount();
+?>
 
-          <table class="table table-bordered" id="table-agenda">
-            
-          </table>
+          </p>
+        </div>
+      </div>
+    </div>
 
-        </main>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Carros Disponíveis</h5>
+          <h6 class="card-subtitle mb-2 font-italic">Total de carros disponíveis</h6>
+          <p class="card-text">
+            <?php 
+              $carros = $pdo->query("SELECT * FROM carros WHERE disponivel = '1'");
+              echo $carros->rowCount();
+            ?>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Usuários Registrados</h5>
+          <h6 class="card-subtitle mb-2 font-italic">Total de usuários registrados</h6>
+          <p class="card-text">
+            <?php 
+              $usuarios = $pdo->query("SELECT * FROM usuarios");
+              echo $usuarios->rowCount();
+            ?>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
       </div>
     </div>
 
