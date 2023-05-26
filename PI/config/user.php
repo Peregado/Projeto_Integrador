@@ -42,6 +42,20 @@ class User {
         }
     }
     
+    public function getUsuarioById($id) {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            return $sql->fetch();
+        } else {
+            return array();
+        }
+    }
 
 
 }
