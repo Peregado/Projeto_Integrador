@@ -64,6 +64,7 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
                 <th scope="col">ID</th>
                 <th scope="col">Nome Completo</th>
                 <th scope="col">Email</th>
+                <th scope="col">Permissão</th>
                 <th scope="col">CPF</th>
                 <th scope="col">Ações</th>
               </tr>
@@ -77,6 +78,7 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
                 <th scope="row"><?php echo $usuario['id'] ?></th>
                 <td><?php echo $usuario['nome'] ?></td>
                 <td><?php echo $usuario['email'] ?></td>
+                <td><?php echo $usuario['rank'] > 1 ? "Administrador" : "Usuário"; ?></td>
                 <td><?php echo $usuario['cpf'] ?></td>
                 <td>
                 <a href="edit.php?type=edit_user&id=<?php echo $usuario['id'] ?>" class="btn btn-warning">Editar</a>
