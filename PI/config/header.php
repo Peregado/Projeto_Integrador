@@ -31,11 +31,11 @@
                 <?php $name = explode(" ", $_SESSION['user']['nome']); echo $name[0]; ?>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item text-black" href="<?php echo SITE_URL ?>admin/index.php">Painel de Controle</a></li>
                   <li><a class="dropdown-item text-black" href="#">Meus dados</a></li>
                   <li><a class="dropdown-item text-black" href="<?php echo SITE_URL ?>logout.php">Sair</a></li>
                   <?php if($user->getUserRank($_SESSION['user']['id'])['rank'] > 1): ?>
 
-                  <li><a class="dropdown-item text-black" href="<?php echo SITE_URL ?>admin/index.php">Painel de Controle</a></li>
                   <?php endif; ?>
 
                 </ul>
