@@ -3,6 +3,23 @@ require_once('global.php');
 $user->verificarLogin();
 $destaqueCarros = $carros->getCarrosDestaque();
 $getCarros = $carros->getAllCarros();
+
+
+
+if(@$_POST['submit']) {
+ 
+  $_SESSION['locacao'] = array();
+
+  $_SESSION['locacao']['informacoes'] = array(
+    'cidade' => $_POST['cidade'],
+    'dt_locacao' => $_POST['dt_locacao'],
+    'dt_final' => $_POST['dt_final']
+  );
+  $_SESSION['locacao']['emAndamento'] = true;
+
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -79,6 +96,11 @@ $getCarros = $carros->getAllCarros();
                 <strong>Valor</strong>: R$<?php echo $carro['valor']; ?>/d
               </p>
               <p class="card-text">Este carro está <?php echo $carro['disponivel'] ? "<span class='text-success'>DISPONÍVEL</span>" : "<span class='text-danger'>NÃO DISPONÍVEL</span>"; ?> no <?php echo SITE_NAME ?>.</p>
+              <?php
+              if($_SESSION['locacao']['emAndamento'] && $carro['disponivel']) {
+                echo "<a href='locacao.php?id={$carro['id']}' class='btn btn-primary mt-auto'>Locar</a>";
+              }
+              ?>
             </div>
           </div>
         </div>

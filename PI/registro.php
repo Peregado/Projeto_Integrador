@@ -36,12 +36,17 @@ require_once('global.php');
                 <input type = "password" name="senha" class="search-senha2" placeholder="Digite sua senha" required>
                 <label for="senha" class="senha2"> <h4>Senha</h4></label>
             </div>
+            <!-- TODO: cpf -->
+            <div>
+                <input type = "text" name="cpf" class="search-cpf" placeholder="Digite seu CPF" required>
+                <label for="cpf" class="cpf"> <h4>CPF</h4></label>
+            </div>
             <div>
               <input type = "date" name="data_nascimento" class="search-date" required>
               <label for="data_nascimento" class="data"> <h5>Data de nascimento:</h5></label>
             </div>
-                <button type="submit" name ="submit"class="botaocontinuar">Continuar</button>
-                <button class="botaovoltar">Voltar</button>
+                <button type="submit" name ="submit" class="botaocontinuar" >Continuar</button>
+                <a href="<?php echo SITE_URL ?>index.php" class="botaovoltar">Voltar</a>
         </fieldset>
     </form>
     </div>

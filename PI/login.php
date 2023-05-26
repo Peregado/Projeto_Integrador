@@ -84,7 +84,7 @@ include_once('config/header.php');
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="submit" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Não possui conta? <a href="#!"
+            <p class="small fw-bold mt-2 pt-1 mb-0">Não possui conta? <a href="<?php echo SITE_URL ?>registro.php"
                 class="link-danger">Registre-se</a></p>
           </div>
 
