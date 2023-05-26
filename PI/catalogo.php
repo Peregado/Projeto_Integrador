@@ -28,7 +28,7 @@ if(@$_POST['submit']) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Senacar</title>
+  <title><?php echo SITE_NAME ?> - Frota</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="./css/style.css" rel="stylesheet" type="text/css">
   <link href="./css/normalize-min.css" rel="stylesheet" type="text/css">
@@ -95,11 +95,15 @@ if(@$_POST['submit']) {
                 <strong>Cor</strong>: <?php echo $carro['cor']; ?> |
                 <strong>Valor</strong>: R$<?php echo $carro['valor']; ?>/d
               </p>
-              <p class="card-text">Este carro está <?php echo $carro['disponivel'] ? "<span class='text-success'>DISPONÍVEL</span>" : "<span class='text-danger'>NÃO DISPONÍVEL</span>"; ?> no <?php echo SITE_NAME ?>.</p>
+              <p class="card-text">Este carro <?php echo $carro['disponivel'] ? "<span class='text-success'>ESTÁ DISPONÍVEL</span>" : "<span class='text-danger'>NÃO ESTÁ DISPONÍVEL</span>"; ?> no <?php echo SITE_NAME ?>.</p>
               <?php
               if($_SESSION['locacao']['emAndamento'] && $carro['disponivel']) {
-                echo "<a href='locacao.php?id={$carro['id']}' class='btn btn-primary mt-auto'>Locar</a>";
+                echo "<a href='finalizar/{$carro['id']}' class='btn btn-primary mt-auto'>Alugar</a>";
               }
+              else if($_SESSION['locacao']['emAndamento'] && !$carro['disponivel']) {
+                echo "<button class='btn btn-danger mt-auto' disabled>Indisponível</button>";
+              }
+            
               ?>
             </div>
           </div>

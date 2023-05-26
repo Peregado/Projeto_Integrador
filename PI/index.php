@@ -3,7 +3,7 @@
 require_once('global.php');
 
 $user->verificarLogin();
-
+echo @$_SESSION['locacao']['emAndamento'];
 ?>
 
 <!DOCTYPE html>
