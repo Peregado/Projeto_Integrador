@@ -28,5 +28,20 @@ class User {
         }
     }
 
+    public function getAllUsers() {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM usuarios");
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            return $sql->fetchAll();
+        } else {
+            return array();
+        }
+    }
+    
+
 
 }
