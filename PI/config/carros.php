@@ -53,6 +53,21 @@ class Carros {
 
     }
 
+    public function getAllTipos() {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("SELECT * FROM carros_tipos");
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            return $sql->fetchAll();
+        } else {
+            return array();
+        }
+
+    }
+
     public function getCarroById($id) {
 
         global $pdo;
@@ -68,6 +83,23 @@ class Carros {
         }
     }
     
+    public function addCarro($modelo, $placa, $km, $cor, $valor, $tipo, $imagem, $em_destaque, $disponivel) {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("INSERT INTO carros (modelo, placa, km, cor, valor, tipo, imagem, em_destaque, disponivel) VALUES (:modelo, :placa, :km, :cor, :valor, :tipo, :imagem, :em_destaque, :disponivel)");
+        $sql->bindValue(":modelo", $modelo);
+        $sql->bindValue(":placa", $placa);
+        $sql->bindValue(":km", $km);
+        $sql->bindValue(":cor", $cor);
+        $sql->bindValue(":valor", $valor);
+        $sql->bindValue(":tipo", $tipo);
+        $sql->bindValue(":imagem", $imagem);
+        $sql->bindValue(":em_destaque", $em_destaque);
+        $sql->bindValue(":disponivel", $disponivel);
+        $sql->execute();
+
+    }
 
 
 
