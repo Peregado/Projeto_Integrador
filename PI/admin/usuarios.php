@@ -8,6 +8,11 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
     exit;
 }
 
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+   $user->updateUsuario(htmlspecialchars($_POST['userId']), htmlspecialchars($_POST['nome']), htmlspecialchars($_POST['email']), htmlspecialchars($_POST['rank']), htmlspecialchars($_POST['data_nasc']), htmlspecialchars($_POST['cpf']), htmlspecialchars($_POST['tel']), htmlspecialchars($_POST['endereco']));
+}
+
 ?>
 
 
@@ -81,16 +86,77 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
                 <td><?php echo $usuario['rank'] > 1 ? "Administrador" : "Usuário"; ?></td>
                 <td><?php echo $usuario['cpf'] ?></td>
                 <td>
-                <a href="edit.php?type=edit_user&id=<?php echo $usuario['id'] ?>" class="btn btn-warning">Editar</a>
-                <a href="action.php?type=delete_user&id=<?php echo $usuario['id'] ?>" class="btn btn-danger">Excluir</a>
+                  <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editUserModal"
+                     data-id="<?php echo $usuario['id']; ?>"
+                     data-nome="<?php echo $usuario['nome']; ?>"
+                     data-email="<?php echo $usuario['email']; ?>"
+                     data-senha="<?php echo $usuario['senha']; ?>"
+                     data-rank="<?php echo $usuario['rank']; ?>"
+                     data-data-nasc="<?php echo $usuario['data_nasc']; ?>"
+                     data-cpf="<?php echo $usuario['cpf']; ?>"
+                     data-tel="<?php echo $usuario['tel']; ?>"
+                     data-endereco="<?php echo $usuario['endereco']; ?>"
+                  >Editar</a>
+                  <a href="action.php?type=delete_user&id=<?php echo $usuario['id'] ?>" class="btn btn-danger">Excluir</a>
                 
-            </td>
+                </td>
               </tr>
               <?php } ?>
             </tbody>
           </table>
 
         </main>
+      </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editUserModalLabel">Editar Usuário</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="editUserForm" action="" method="POST">
+              <input type="hidden" name="userId" id="userId">
+              <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="rank">Permissão:</label>
+                <select class="form-control" id="rank" name="rank" required>
+                  <option value="1">Usuário</option>
+                  <option value="2">Administrador</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="dataNasc">Data de Nascimento:</label>
+                <input type="date" class="form-control" id="dataNasc" name="data_nasc" required>
+              </div>
+              <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" required>
+              </div>
+              <div class="form-group">
+                <label for="tel">Telefone:</label>
+                <input type="text" class="form-control" id="tel" name="tel" required>
+              </div>
+              <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <textarea class="form-control" id="endereco" name="endereco" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -108,10 +174,33 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
       feather.replace()
     </script>
 
+    <!-- Edit User Script -->
+    <script>
+      $('#editUserModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        var userId = button.data('id')
+        var nome = button.data('nome')
+        var email = button.data('email')
+        var rank = button.data('rank')
+        var dataNasc = button.data('data-nasc')
+        var cpf = button.data('cpf')
+        var tel = button.data('tel')
+        var endereco = button.data('endereco')
+
+        var modal = $(this)
+        modal.find('.modal-title').text('Editar Usuário - ID: ' + userId)
+        modal.find('#userId').val(userId)
+        modal.find('#nome').val(nome)
+        modal.find('#email').val(email)
+        modal.find('#rank').val(rank)
+        modal.find('#dataNasc').val(dataNasc)
+        modal.find('#cpf').val(cpf)
+        modal.find('#tel').val(tel)
+        modal.find('#endereco').val(endereco)
+      })
+    </script>
+
     <!-- Graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.1/dist/Chart.min.js"></script>
-    
-
-
   </body>
 </html>

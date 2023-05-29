@@ -85,6 +85,14 @@ if($user->getUserRank($_SESSION['user']['id'])['rank'] < 2) {
                   $sql->bindValue(":id", $locacao['id_usuario']);
                   $sql->execute();
                   $usuario = $sql->fetch();
+
+                  // if carro existe
+                  if(!$carro) {
+                    $carro = array(
+                      'modelo' => 'Carro não encontrado',
+                      'imagem' => 'https://via.placeholder.com/150'
+                    );
+                  }
               ?>
               <tr>
                 <th scope="row"><?php echo $locacao['id'] ?></th>

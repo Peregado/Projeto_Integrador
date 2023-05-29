@@ -57,5 +57,27 @@ class User {
         }
     }
 
+    public function updateUsuario($id, $nome, $email, $rank, $data_nasc, $cpf, $tel, $endereco) {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, rank = :rank, data_nasc = :data_nasc, cpf = :cpf, tel = :tel, endereco = :endereco WHERE id = :id");
+        $sql->bindValue(":id", $id);
+        $sql->bindValue(":nome", $nome);
+        $sql->bindValue(":email", $email);
+        $sql->bindValue(":rank", $rank);
+        $sql->bindValue(":data_nasc", $data_nasc);
+        $sql->bindValue(":cpf", $cpf);
+        $sql->bindValue(":tel", $tel);
+        $sql->bindValue(":endereco", $endereco);
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }

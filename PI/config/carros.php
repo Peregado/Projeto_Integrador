@@ -101,6 +101,25 @@ class Carros {
 
     }
 
+    public function updateCarro($modelo, $placa, $km, $cor, $valor, $tipo, $imagem, $em_destaque, $disponivel, $id) {
+
+        global $pdo;
+
+        $sql = $pdo->prepare("UPDATE carros SET modelo = :modelo, placa = :placa, km = :km, cor = :cor, valor = :valor, tipo = :tipo, imagem = :imagem, em_destaque = :em_destaque, disponivel = :disponivel WHERE id = :id");
+        $sql->bindValue(":modelo", $modelo);
+        $sql->bindValue(":placa", $placa);
+        $sql->bindValue(":km", $km);
+        $sql->bindValue(":cor", $cor);
+        $sql->bindValue(":valor", $valor);
+        $sql->bindValue(":tipo", $tipo);
+        $sql->bindValue(":imagem", $imagem);
+        $sql->bindValue(":em_destaque", $em_destaque);
+        $sql->bindValue(":disponivel", $disponivel);
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+
+    }
+
 
 
 }
