@@ -32,7 +32,9 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                
-                  <?php if($user->getUserRank($_SESSION['user']['id'])['rank'] > 1): ?>
+                <?php $userRank = $user->getUserRank($_SESSION['user']['id']);
+                      if ($userRank && $userRank['rank'] > 1): ?>
+
                     <li><a class="dropdown-item text-black" href="<?php echo SITE_URL ?>admin/index.php">Painel de Controle</a></li>
                   <?php endif; ?>
                   <li><a class="dropdown-item text-black" href="#">Meus dados</a></li>

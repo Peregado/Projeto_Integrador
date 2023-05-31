@@ -13,20 +13,24 @@ class User {
     }
 
 
-    public function getUserRank($id) {
+public function getUserRank($id) {
+    global $pdo;
 
-        global $pdo;
-
-        $sql = $pdo->prepare("SELECT rank FROM usuarios WHERE id = :id");
+    try {
+        $sql = $pdo->prepare("SELECT `rank` FROM usuarios WHERE id = :id");
         $sql->bindValue(":id", $id);
         $sql->execute();
 
-        if($sql->rowCount() > 0) {
+        if ($sql->rowCount() > 0) {
             return $sql->fetch();
         } else {
             return array();
         }
+    } catch (PDOException $e) {
+        echo "Erro na consulta SQL: " . $e->getMessage();
     }
+}
+
 
     public function getAllUsers() {
 
